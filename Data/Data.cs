@@ -1,17 +1,22 @@
 ﻿using Bai_3.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace Bai_3.Data
 {
-    public class AppDbContext : DbContext
+    public class Data
     {
-        // Hàm khởi tạo nhận cấu hình (chuỗi kết nối) từ Program.cs
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        public List<Category> categories = new List<Category>
         {
-        }
+            new Category (){Id=1,Name ="smartphone"},
+            new Category (){Id=2,Name ="book"}
 
-        // Khai báo các bảng trong cơ sở dữ liệu
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Pooduct> Products { get; set; }
+        };
+        public static List<Pooduct> product = new List<Pooduct>
+        {
+            new Pooduct() {Id =1, Name = "table",Price = 10000, Description="new",CategroryId=1},
+          new Pooduct() {Id =1, Name = "phone",Price = 10000, Description="new",CategroryId=1},
+          new Pooduct() {Id =1, Name = "book",Price = 10000, Description="new",CategroryId=2},
+          new Pooduct() {Id =1, Name = "pen",Price = 10000, Description="new",CategroryId=2},
+
+        };
     }
 }
