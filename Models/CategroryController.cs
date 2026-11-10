@@ -41,10 +41,12 @@ namespace Bai_3.Models
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Category category)
-        {
-            category.Id = categories.Count + 1;
-            categories.Add(category);
-            return RedirectToAction(nameof(Index));
+        {if (ModelState.IsValid) {
+                category.Id = categories.Count + 1;
+                categories.Add(category);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
         }
 
         // GET: CategroryController/Edit/5

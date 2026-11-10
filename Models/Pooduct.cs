@@ -7,6 +7,6 @@
         public decimal Price { get; set; }
         public string Description { get; set; } = String.Empty;
         public int CategroryId { get; set; }
-        public Category Category { get; set; } = null;
+        public Category Categoryname { get; set; } = null;
     }
 }
